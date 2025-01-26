@@ -2,23 +2,18 @@
 
 This module will deploy a cloud function that will produce a Google Cloud Infrastructure Entitlement Report. 
 
-
 ### Detailed
 
 The resources/services/activations/deletions that this module will create/trigger are:
 
 - A Cloud function to execute a python script to produce a Google Cloud Infrastructure Entitlement Report
 
+## Architecture
+![Reference Architecture](diagram/entitlements.svg)
 
-### PreDeploy
-To deploy this blueprint you must have an active billing account and billing permissions.
+### Prerequisite
 
-
-#### Setting up Entitlement Reporting with a User-Managed Service Account
-
-This document outlines the steps to create a user-managed service account in Google Cloud and assign it a custom role in the Google Workspace Admin console for entitlement reporting purposes.
-
-1. Create a User-Managed Service Account
+1. Create a User-Managed Service Account on Google Cloud Project
 
 Use the following `gcloud` command to create a service account:
 
@@ -27,23 +22,21 @@ gcloud iam service-accounts create <SERVICE_ACCOUNT_ID> \
     --display-name "<DISPLAY_NAME>"
 ```
 
-2. Create a Custom Role in the Admin Console
-Go to the Admin console:
+2. Enable Admin Api on Google Cloud Project 
 
-Open your web browser and go to admin.google.com.
-Sign in with your administrator account.
-Navigate to custom roles:
+```
+gcloud services enable admin.googleapis.com
+```
 
-In the left-hand navigation menu, go to Account -> Admin roles.
-Create a new role:
-
-Click the "Create Role" button.
-Provide role details:
-
-Give the role a name (e.g., "Entitlement reporting").
+3. Create a Custom Role in the Admin Console
+- Open your web browser and go to admin.google.com.
+- Sign in with administrator account.
+- Navigate to custom roles:
+- In the left-hand navigation menu, go to Account -> Admin roles.
+- Click the "Create Role" button.
+- Give the role a name (e.g., "Entitlement reporting").
 Optionally, provide a description.
-Assign permissions:
-
+Assign permissions
 Select the specific read permissions required for entitlement reporting:
 Read Organization
 Read group
@@ -53,7 +46,7 @@ Review and create:
 Review the permissions you've selected.
 Click the "Create" button.
 
-3. Assign the Service Account to the Custom Role
+4. Assign the Service Account to the Custom Role
 Go to the Admin console:
 
 Open your web browser and go to admin.google.com.
@@ -73,8 +66,6 @@ Enter the service account's email address.
 Click "Add" button.
 Click "Assign role" button.
 
-## Architecture
-![Reference Architecture](diagram/entitlements.svg)
 
 ## Usage
 
