@@ -116,7 +116,14 @@ Run script with Google Local Application Default Crediatials(https://cloud.googl
 
 ```
 python ~/terraform-google-entitlement-report/files/cloud_identity_entitlements.py --customer_id <Your Customer ID>
+
 ```
+
+Determine the identity autheticating
+```
+curl -X GET   'https://www.googleapis.com/oauth2/v3/userinfo'   -H "Authorization: Bearer $(gcloud auth print-access-token)"
+```
+
 ## Contributing
 
 Refer to the [contribution guidelines](./CONTRIBUTING.md) for
