@@ -124,6 +124,10 @@ Determine the identity autheticating
 curl -X GET   'https://www.googleapis.com/oauth2/v3/userinfo'   -H "Authorization: Bearer $(gcloud auth print-access-token)"
 ```
 
+Switch to impersonate the Google Cloud Service Account(https://cloud.google.com/docs/authentication/use-service-account-impersonation#adc)
+```
+gcloud auth application-default login --impersonate-service-account SERVICE_ACCT_EMAIL
+```
 ## Contributing
 
 Refer to the [contribution guidelines](./CONTRIBUTING.md) for
