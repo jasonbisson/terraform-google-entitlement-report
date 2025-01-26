@@ -74,7 +74,7 @@ Click "Add" button.
 Click "Assign role" button.
 
 ## Architecture
-![Reference Architecture](diagram/entitlement.svg)
+![Reference Architecture](diagram/entitlements.svg)
 
 ## Usage
 
