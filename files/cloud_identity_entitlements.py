@@ -1,5 +1,4 @@
 import argparse
-import os
 from googleapiclient.discovery import build
 
 def get_arguments():
