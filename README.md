@@ -11,7 +11,7 @@ The resources/services/activations/deletions that this module will create/trigge
 ## Architecture
 ![Reference Architecture](diagram/entitlements.svg)
 
-### Prerequisite
+### Prerequisites
 
 1. Create a User-Managed Service Account on Google Cloud Project
 
@@ -35,36 +35,26 @@ gcloud services enable admin.googleapis.com
 - In the left-hand navigation menu, go to Account -> Admin roles.
 - Click the "Create Role" button.
 - Give the role a name (e.g., "Entitlement reporting").
-Optionally, provide a description.
-Assign permissions
-Select the specific read permissions required for entitlement reporting:
-Read Organization
-Read group
-Read user
-Review and create:
-
-Review the permissions you've selected.
-Click the "Create" button.
+- Optionally, provide a description.
+- Assign permissions
+- Select the specific read permissions required for entitlement reporting:
+- Read Organization
+- Read group
+- Read user
+- Review the permissions you've selected.
+- Click the "Create" button.
 
 4. Assign the Service Account to the Custom Role
-Go to the Admin console:
-
-Open your web browser and go to admin.google.com.
-Sign in with your administrator account.
-Navigate to Admin roles:
-
-In the left-hand navigation menu, go to Account -> Admin roles.
-Find the custom role:
-
-Locate the custom role that you created (e.g., "Entitlement reporting").
-Assign the service account to the custom role:
-
-Click on the custom role.
-Click on the "Admins" tab.
-Click the "Assign service accounts" button.
-Enter the service account's email address.
-Click "Add" button.
-Click "Assign role" button.
+- In the left-hand navigation menu, go to Account -> Admin roles.
+- Find the custom role:
+- Locate the custom role that you created (e.g., "Entitlement reporting").
+- Assign the service account to the custom role:
+- Click on the custom role.
+- Click on the "Admins" tab.
+- Click the "Assign service accounts" button.
+- Enter the service account's email address.
+- Click "Add" button.
+- Click "Assign role" button.
 
 
 ## Usage
